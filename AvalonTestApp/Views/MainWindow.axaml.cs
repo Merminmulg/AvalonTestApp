@@ -15,8 +15,8 @@ namespace AvalonTestApp.Views
         {
             InitializeComponent();
             albumTitleCollection = new ObservableCollection<AlbumTitle>();
-            albumTitleCollection.Add(AlbumTitleParser.Parser("https://music.amazon.com/albums/B001230JXC"));
-            Songs = new ObservableCollection<Song>(SongParser.Parser("https://music.amazon.com/albums/B001230JXC")); 
+            albumTitleCollection.Add(AlbumTitleParser.Parser("https://music.amazon.com/playlists/B08BWK8W15"));
+            Songs = new ObservableCollection<Song>(SongParser.Parser("https://music.amazon.com/playlists/B08BWK8W15")); 
             albumTitleView.Items = albumTitleCollection;
             
             songList.Items = Songs;

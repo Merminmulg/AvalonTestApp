@@ -38,7 +38,7 @@ namespace AvalonTestApp.DataSetter
                             foreach (var table in tables)
                             {
                                 var html = table.GetAttribute("innerHTML");
-                                name = table.FindElement(By.XPath(".//div[1]/music-link")).Text;
+                                name = table.FindElement(By.XPath(".//div[1]/music-link")).GetAttribute("title");
                                 singer = table.FindElement(By.XPath(".//div[2]/div/music-link[1]/a")).Text;
                                 album = table.FindElement(By.XPath(".//div[2]/div/music-link[2]/a")).Text;
                                 duration = table.FindElement(By.XPath(".//div[3]/music-link/span")).Text;
