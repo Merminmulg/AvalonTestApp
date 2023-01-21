@@ -15,7 +15,7 @@ namespace AvalonTestApp.DataSetter
     {
         public static AlbumTitle Parser(string url)
         {
-            WebDriver driver = new ChromeDriver(@"C:/chromedriver_win32/");
+            WebDriver driver = new ChromeDriver(@"./Driver");
             driver.Navigate().GoToUrl(url);
             AlbumTitle albumTitle = new AlbumTitle("Error", "Error", "Error");
             Task.Delay(2000).Wait();

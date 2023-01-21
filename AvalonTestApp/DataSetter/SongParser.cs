@@ -15,7 +15,7 @@ namespace AvalonTestApp.DataSetter
     {
         public static List<Song> Parser(string url)
         {
-            WebDriver driver = new ChromeDriver(@"C:/chromedriver_win32/");
+            WebDriver driver = new ChromeDriver(@"./Driver");
             driver.Navigate().GoToUrl(url);
             IJavaScriptExecutor js = driver;
             List<Song> Songs = new List<Song>();
