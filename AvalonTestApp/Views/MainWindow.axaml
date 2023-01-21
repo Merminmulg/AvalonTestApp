@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvalonTestApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="450"
+		xmlns:local="using:AvalonTestApp.Views"
+        x:Class="AvalonTestApp.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvalonTestApp">
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	<Grid>
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		
+		<ListBox x:Name="albumTitleView" Grid.Row="0">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Image Grid.Column="0" Name="image" Source="{Binding Path=ImageUrl}"/>
+						<TextBlock Grid.Column="1" FontSize="24" Text="{Binding Path=Title}"/>
+						<TextBlock Grid.Column="2" FontSize="24" Text="{Binding Path=Discription}"/>
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		
+		<ListBox x:Name="songList" Grid.Row="1">
+		<ListBox.ItemTemplate>
+			<DataTemplate>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="350"/>
+						<ColumnDefinition Width="350"/>
+						<ColumnDefinition Width="350"/>
+						<ColumnDefinition />
+						<ColumnDefinition MaxWidth="80"/>
+					</Grid.ColumnDefinitions>
+					<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Grid.Column="0" FontSize="20" Text="{Binding Path=Name}"/>
+					<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Grid.Column="1" FontSize="16" Text="{Binding Path=Singer}"/>
+					<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Grid.Column="2" FontSize="16" Text="{Binding Path=AlbumName}"/>
+					<TextBlock TextWrapping="Wrap" HorizontalAlignment="Right" Grid.Column="4" FontSize="20" Text="{Binding Path=Duration}"/>
+				</Grid>
+			</DataTemplate>
+		</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+	
+    
+</Window>
